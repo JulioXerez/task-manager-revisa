@@ -8,6 +8,12 @@ build/
 coverage/
 *.tsbuildinfo
 
+# Local database files
+data/
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+
 # Logs
 logs/
 *.log

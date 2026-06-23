@@ -1,4 +1,17 @@
 {
+  "name": "task-manager-revisa",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace backend",
+    "dev:api": "npm run dev --workspace backend",
+    "dev:web": "npm run dev --workspace frontend",
+    "build": "npm run build --workspaces",
+    "lint": "npm run lint --workspace frontend"
+  },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.1",
     "tailwindcss": "^4.3.1"
