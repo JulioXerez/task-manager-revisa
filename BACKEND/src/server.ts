@@ -108,6 +108,6 @@ app.delete('/tasks/:id', async (request, reply) => {
 })
 
 const port = Number(process.env.PORT ?? 3333)
-const host = process.env.HOST ?? '0.0.0.0'
+const host = process.env.HOST ?? '::'
 
 await app.listen({ port, host })
