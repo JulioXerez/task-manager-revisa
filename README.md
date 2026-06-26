@@ -6,7 +6,7 @@ O banco de dados foi feito em SQlite
 backend foi feito em Fastify e prisma 
 frontend foi feito em react vite, typescript, html e tailwind css.
 
-para executar o codigo deve-se abrir dois terminais 
+para executar o codigo deve-se inserir a pasta no disco C: e abrir dois terminais no VScode
 
 No primeiro terminal digite cd backend + Enter e em seguida execute "npm run dev".
 
