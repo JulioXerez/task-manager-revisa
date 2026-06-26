@@ -230,11 +230,13 @@ function App() {
         <header className="flex flex-col gap-4 border-b border-zinc-200 pb-5 md:flex-row md:items-end md:justify-between">
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-red-600">Revisa Hub</p>
+            
             <h1 className="mt-1 text-3xl font-extrabold text-zinc-900 tracking-tight sm:text-4xl">Gerenciador de tarefas</h1>
             <p className="mt-2 max-w-2xl text-sm text-zinc-500 leading-normal">
               Organize demandas, acompanhe progresso e mantenha prioridades visíveis em um fluxo simples.
             </p>
           </div>
+         
           <button
             className="w-fit rounded-lg border border-zinc-300 bg-white px-4 py-2 text-sm font-semibold text-zinc-700 hover:bg-zinc-50 transition-all duration-200 active:scale-95 cursor-pointer shadow-xs"
             onClick={() => void loadTasks()}
@@ -242,6 +244,7 @@ function App() {
           >
             Atualizar
           </button>
+
         </header>
 
         {/* Rendimento e Métricas de Estudos Card Container */}
@@ -331,25 +334,9 @@ function App() {
 
         {/* Search and filter row */}
         <section className="flex flex-col sm:flex-row gap-4 justify-between items-center mt-2">
-          {/* Search bar */}
-          <div className="relative w-full sm:max-w-md">
-            <span className="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none text-zinc-400">
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5">
-                <circle cx="11" cy="11" r="8" />
-                <path d="M21 21l-4.35-4.35" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </span>
-            <input
-              type="text"
-              placeholder="Pesquisar estudos..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full bg-white border border-zinc-200 text-zinc-900 rounded-full pl-11 pr-4 py-2.5 text-sm focus:outline-none focus:border-zinc-400 focus:ring-1 focus:ring-zinc-400 placeholder-zinc-400 shadow-2xs transition-all duration-200"
-            />
-          </div>
 
           {/* Priority filter pills */}
-          <div className="flex items-center gap-3 w-full sm:w-auto justify-between sm:justify-end">
+          <div className="flex items-center gap-3 w-full justify-between sm:justify-end">
             <span className="text-sm font-semibold text-zinc-500">Prioridade:</span>
             <div className="flex bg-[#F8F9FA] border border-zinc-200/80 rounded-full p-1 gap-1">
               {(['all', 'high', 'medium', 'low'] as const).map((p) => {
@@ -416,11 +403,13 @@ function App() {
               </label>
 
               <label className="block text-xs font-bold text-zinc-500 uppercase tracking-wider">
-                Prazo
+                Prazo (opcional)
                 <input
                   className="mt-2 w-full rounded-lg border border-zinc-200 bg-white px-3 py-2 text-sm text-zinc-900 outline-none transition focus:border-zinc-400 focus:ring-1 focus:ring-zinc-400"
                   onChange={(event) => setForm((current) => ({ ...current, dueDate: event.target.value }))}
                   type="date"
+                  min="2026-01-01" 
+                  max="2099-12-31"
                   value={form.dueDate}
                 />
               </label>
@@ -527,7 +516,7 @@ function App() {
                               const priorityBadge = {
                                 low: 'bg-zinc-400 text-white',
                                 medium: 'bg-orange-500 text-white',
-                                high: 'bg-red-650 text-white',
+                                high: 'bg-red-600 text-white',
                               }
 
                               return (
